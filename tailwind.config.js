@@ -11,9 +11,11 @@ module.exports = {
       'green': '#13ce66',
       'yellow': '#ffc82c',
       'gray-dark': '#273444',
-      'gray': '#8492a6',
+      'gray': 'rgb(31, 31, 31)',
       'gray-light': '#d3dce6',
-      'bg': 'rgb(40, 40, 40)'
+      'bg': 'rgb(40, 40, 40)',
+      'green': 'rgb(0, 70, 56)',
+      'gren':'rgb(21, 150, 67)'
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
