@@ -10,7 +10,10 @@ function Section() {
       <div className='flex w-full bg-gray '>
         <Home/>
         <div className=' w-full flex flex-col p-[20px] gap-[30px] '>
-            <header className=' w-full flex  justify-end  '>     
+            <header className=' w-full flex  justify-end  '> 
+              <div>
+                {/* <input className='w-[200px]' type='text'/> */}
+              </div>    
               <div className='flex justify-end '>
                  <button className='bg-[black] w-[145px] h-[45px] rounded-[50px] text-gray-light flex justify-center  items-center gap-[15px]' ><FaUserCircle  className='text-[25px]'/>Angel <TiArrowSortedDown className='text-[20px]' /></button>  
               </div>    
@@ -47,7 +50,6 @@ function Section() {
                   </div>
                   <p className='text-[20px]'>Dance/Electonic Mix</p>
                 </div>
-
               </div>
             </div>
 

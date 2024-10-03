@@ -18,15 +18,15 @@ function Home() {
         <div className='text-[#f0f6f2] gap-[10px] '>
           <Link to="/">
           <div className='hover:bg-[#3b3b3b] active:bg-[#3b3b3b] rounded-[6px] p-[10px] w-[255px] h-[45px] flex items-center gap-[10px] cursor-pointer'>
-              <FaHome className='w-[24px] h-[25px]'/>
-               <p className='w-[51px] h-[25px]'>Home</p>
+              <FaHome className='w-[24px] h-[25px] text-gray-light'/>
+               <p className='w-[51px] h-[25px] text-gray-light ' >Home</p>
             </div>
           </Link>
          
             <Link to='/search`'>
             <div className=' hover:bg-[#3b3b3b] active:bg-[#3b3b3b] rounded-[6px] p-[10px] w-[255px] h-[45px] flex items-center gap-[10px] cursor-pointer' >
-              <FaSearch  className='w-[24px] h-[25px]'/>
-              <p className='w-[51px] h-[25px]'>Search</p>
+              <FaSearch  className='w-[24px] h-[25px] text-gray-light'/>
+              <p className='w-[51px] h-[25px] text-gray-light list-none decoration-none'>Search</p>
               </div> 
             </Link>
               
