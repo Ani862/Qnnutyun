@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <div className='w-[300px] h-screen bg-[black] p-[20px] gap-[25px] flex flex-col'>   
+    <div className='w-[300px] h-screen bg-[black] p-[20px] gap-[25px] flex flex-col fixed'>   
         <div className='w-[164px] h-[49px] mb-[25px] text-gray-light cursor-pointer'>
             <img src='https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Full_Logo_RGB_White.png'/>
         </div>
