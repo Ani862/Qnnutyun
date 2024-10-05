@@ -3,6 +3,8 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import { FaUserCircle } from "react-icons/fa";
 import Home from '../Home';
 import { FaHeart } from "react-icons/fa6";
+import Search from '../Search'
+
 import Music from '../Music';
 
 function Section() {
@@ -10,18 +12,18 @@ function Section() {
       <div className='flex w-full bg-gray '>
         <Home/>
         <div className=' w-full flex flex-col p-[20px] gap-[30px] '>
-            <header className=' w-full flex  justify-end  '> 
-              <div>
-                {/* <input className='w-[200px]' type='text'/> */}
+            <header className=' w-full flex justify-between  '> 
+              <div className='flex'>
+                <Search/>
               </div>    
               <div className='flex justify-end '>
                  <button className='bg-[black] w-[145px] h-[45px] rounded-[50px] text-gray-light flex justify-center  items-center gap-[15px]' ><FaUserCircle  className='text-[25px]'/>Angel <TiArrowSortedDown className='text-[20px]' /></button>  
               </div>    
            </header>
 
-           <div className='flex flex-col  text-gray-light gap-[20px]'>
+           {/* <div className='flex flex-col  text-gray-light gap-[20px]'>
               <p className='text-[30px]'>Good morning</p>
-              <div className='flex gap-[30px]'>
+              <div className='flex gap-[30px] flex-wrap'>
 
                 <div className='bg-[#3b3b3b] rounded-[7px]  w-[320px] h-[80px] flex items-center gap-[20px] cursor-pointer'>
                   <div className='w-[80px] h-[80px] rounded-[7px] bg-[#906bc2] flex justify-center items-center'>
@@ -51,7 +53,7 @@ function Section() {
                   <p className='text-[20px]'>Dance/Electonic Mix</p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className='text-gray-light'>
               <p className='text-[30px]'>Shows you might like</p>
