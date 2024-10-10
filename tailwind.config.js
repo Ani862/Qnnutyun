@@ -2,7 +2,15 @@
  
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
-  theme: {
+  theme: {  
+    screens: { 
+      sm: '480px', 
+      md: '768px', 
+
+      lg: '1180px', 
+      xl: '1440px', 
+    },
+
     colors: {
       'blue': '#1fb6ff',
       'purple': '#7e5bef',
@@ -28,6 +36,9 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
+      },
+      transformOrigin: {
+        'top-left-1/3-3/4': '33% 75%',
       }
     }
   },  
