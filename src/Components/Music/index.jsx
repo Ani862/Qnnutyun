@@ -7,6 +7,7 @@ import { FaSearch } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Header from  '../Header';
 import '../../App.css'
+import Loading from '../Loading';
 
 const CLIENT_ID ="aab79f1ca30a4e1d939b87b2c07cd730";
 const CLIENT_SECRET = "2d9c356d709b4c1c9b6f709d24cb8828"
@@ -16,6 +17,7 @@ const CLIENT_SECRET = "2d9c356d709b4c1c9b6f709d24cb8828"
 function Music() {
   const[searchInput, setSearchInput]= useState("")
   const[accessToken, setAccessToken]= useState("")
+  const [loading, setLoading] = useState(false)
   const[albums, setAlbums] = useState([])
 
 
@@ -31,13 +33,13 @@ function Music() {
     fetch('https://accounts.spotify.com/api/token', authParameters)
        .then(result => result.json())
       .then(data =>setAccessToken(data.access_token))
+   
   }, []) 
 
 
   // Search
   async function search() {
-    console.log("Search for " + searchInput)
-
+   
     // Get request using search to get the Artist ID
     const searchParameters ={
         method: 'GET',
@@ -50,26 +52,25 @@ function Music() {
     const artistID = await fetch('https://api.spotify.com/v1/search?q=' + searchInput + '&type=artist', searchParameters)
         .then(response => response.json())
         .then(data => {return data.artists.items[0].id })
-        
-        console.log("Artist ID is" + artistID)
+        setLoading(false)
 
+        
     // Get request with Arist ID  grab all the  albums from that artist
 
     const albums = await fetch("https://api.spotify.com/v1/artists/"  + artistID + '/albums' +'?include_groups=album&market=US&limit=50', searchParameters)
         .then(response => response.json())
         .then(data =>{
-          console.log(data)
           setAlbums(data.items)
         })
 
     // Display those albums to the user  
-  }
-  console.log(albums)
 
+  }
+  if (loading) return <Loading/>
   return( 
     <div className='flex flex-col gap-[20px]'>
-      <div className='flex flex-col  items-center gap-[20px]  lg:flex-row justify-between'>
-        <div className='flex w-[200px] p-[20px]'>
+      <div className='flex flex-col gap-[20px] items-center  md:flex-row justify-between  sm:flex-row item-center'>
+        <div className='flex w-[200px] p-[20px] '>
         <FaSearch className='  mt-[10px] text-[20px] text-[white] absolute ml-[10px]' />
           <input className='w-[200px] h-[40px] py-[5px] px-[40px] bg-[#2f2f2f] rounded-[50px] text-[white] border border-[white]'
             placeholder='Search For Artist'
@@ -78,6 +79,7 @@ function Music() {
               if(event.key === "Enter"){
                 search()
               }
+             
             }}
             onChange={event => setSearchInput(event.target.value)}
           /> 
@@ -93,11 +95,10 @@ function Music() {
       <p className='text-[30px] text-gray-light '>Albums</p>
         <div className='flex flex-wrap justify-center gap-[30px]'>
           {albums.map((album, i)=>{
-            console.log(album)
             return(
               <div className='flex gap-[20px] '>
-                <div className= ' w-[300px] h-[380px] bg-[#2f2f2f] flex flex-col items-center p-[20px] list-none decoration-none  rounded-[20px] gap-[10px] cursor-pointer'>               
-                  <img className='transition-colors w-[250px] h-[300px] rounded-[10px] touch-auto ' src={album.images[0].url}/>
+                <div className= ' w-[300px]  bg-[#2f2f2f] flex flex-col items-center p-[25px] list-none decoration-none  rounded-[20px] gap-[10px] cursor-pointer'>               
+                  <img className='transition-colors w-[250px] h-[280px] rounded-[10px] touch-auto ' src={album.images[0].url}/>
                   <div className='text-start w-[300px] px-[20px]'>
                     <h1 className='text-[20px] text-gray-light'>{album.name}</h1>                  
                     <p className='text-[20px] text-gray-light'>Singer:{album.artists[0].name}</p>

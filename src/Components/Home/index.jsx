@@ -11,11 +11,11 @@ import '../../App.css'
 
 function Home() {
   return (
-    <div className='w-[300px] bg-[black] p-[20px] gap-[25px] flex flex-col fixed h-[100%] '>   
+    <div className='md:flex w-[300px] bg-[black] p-[20px] gap-[25px]  flex-col fixed h-[100%] hidden '>   
         <div className='w-[164px] h-[49px] mb-[25px] text-gray-light cursor-pointer '>
             <img className='hover:text-[#1ed760]'  src='https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Full_Logo_RGB_White.png'/>
         </div>
-        <div className='text-[#f0f6f2] gap-[10px] '>
+        <div className='none md:text-[#f0f6f2] gap-[10px] '>
           <Link to="/">
           <div className='hover:bg-[#3b3b3b] active:bg-[#3b3b3b] rounded-[6px] p-[10px] w-[255px] h-[45px] flex items-center gap-[10px] cursor-pointer'>
               <FaHome className='w-[24px] h-[25px] text-gray-light'/>

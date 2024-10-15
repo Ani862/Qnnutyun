@@ -38,7 +38,7 @@ function Footer() {
             <p> версия Spotify</p>
           </div>
 
-          <div className='flex text-[32px] gap-[15px]'>
+          <div className='flex text-[32px] gap-[15px] cursor-pointer'>
             <div className='w-[50px] h-[50px] bg-[#3f3f3f] hover:bg-[#5c5b5b] active:bg-[#5c5b5b] flex justify-center items-center rounded-[50px]'>
                <FaInstagram />
             </div>
